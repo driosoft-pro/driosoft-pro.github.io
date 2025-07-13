@@ -491,3 +491,21 @@ body.light .skills-list li {
   background: #e0e0e0;
   color: #0288d1;
 }
+
+.projects-category {
+  margin-bottom: 2.5rem;
+  padding: 0 0.5rem;
+}
+.projects-category h3 {
+  text-align: center;
+  color: #4fc3f7;
+  margin-bottom: 1.2rem;
+  margin-top: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+/* Mejorar separación entre categorías en modo claro */
+body.light .projects-category h3 {
+  color: #0288d1;
+}

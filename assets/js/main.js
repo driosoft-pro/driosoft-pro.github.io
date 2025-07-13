@@ -1,8 +1,5 @@
-// main.js
-// Archivo preparado para futuras mejoras de interactividad y animaciones
 
 // Animación de aparición suave para las tarjetas de proyectos
-
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.project-card');
   cards.forEach((card, i) => {

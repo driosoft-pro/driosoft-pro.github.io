@@ -1,5 +1,4 @@
-// assets/js/templates.js
-
+// funcion para cargar plantillas HTML dinámicamente
 function loadTemplate(id, url, callback) {
   fetch(url)
     .then(res => res.text())
@@ -9,6 +8,7 @@ function loadTemplate(id, url, callback) {
     });
 }
 
+// crear un evento para cargar las plantillas al inicio
 document.addEventListener('DOMContentLoaded', () => {
   loadTemplate('header-container', 'assets/templates/header.html', () => {
     if (typeof themeToggleInit === 'function') themeToggleInit();

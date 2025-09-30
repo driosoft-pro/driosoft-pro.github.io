@@ -621,27 +621,70 @@ footer {
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Theme toggle mejorado */
-.theme-toggle {
+/* Theme toggle y language toggle */
+.header-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.theme-toggle, .lang-toggle {
   background: var(--bg-tertiary);
   border: 2px solid rgba(59, 130, 246, 0.2);
-  font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
-  width: 44px;
-  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-left: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.theme-toggle {
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+}
+
+.lang-toggle {
+  font-size: 0.85rem;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  overflow: hidden;
 }
 
 .theme-toggle:hover {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
   transform: rotate(180deg) scale(1.1);
+}
+
+.lang-toggle:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: scale(1.1);
+  color: white;
+}
+
+.lang-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.lang-toggle:active::before {
+  width: 100px;
+  height: 100px;
 }
 
 /* Animación suave de cambio de tema */
@@ -754,7 +797,7 @@ body.light .contact-list li {
   background: var(--bg-tertiary);
 }
 
-body.light .theme-toggle {
+body.light .theme-toggle, body.light .lang-toggle {
   background: var(--bg-tertiary);
   border-color: rgba(37, 99, 235, 0.2);
 }

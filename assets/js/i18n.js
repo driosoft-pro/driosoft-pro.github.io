@@ -30,12 +30,12 @@ const translations = {
       intro: 'Soy <strong>Deyton Riascos Ortiz</strong>, desarrollador de software con experiencia en análisis, desarrollo y optimización de soluciones tecnológicas para empresas de diferentes sectores. Me apasiona la innovación, el aprendizaje continuo y la creación de herramientas que generen impacto real.',
       experienceTitle: 'Experiencia laboral',
       educationTitle: 'Educación',
-      certificationTitle: 'Certificaciones',
+      certificationsTitle: 'Licencias y certificaciones', // Ajustado a tu clave plural
       skillsTitle: 'Conocimientos y aptitudes',
       fullTime: 'Jornada completa',
       showCredential: 'Mostrar credencial',
       aptitudes: 'Aptitudes',
-      // Claves de la experiencia
+      // Claves de la experiencia (añadidas para completar el archivo)
       pcaRole: 'Desarrollador de software',
       pcaCompany: 'PCA INGENIERÍA S.A.S.',
       pcaPeriod: 'sept. 2023 - mar. 2024 · 7 meses · Palmira, Valle del Cauca, Colombia',
@@ -62,7 +62,7 @@ const translations = {
       appsCategory: 'Aplicaciones y Sistemas de Gestión',
       dataCategory: 'Análisis de Datos',
       
-      // IA y Visión Computacional
+      // Proyectos individuales
       mugencode: {
         title: 'Mugencode DataNalic',
         desc: 'Plataforma de análisis de datos y visualización avanzada con herramientas de procesamiento y análisis estadístico.'
@@ -79,8 +79,6 @@ const translations = {
         title: 'Emotion Recognition',
         desc: 'Reconocimiento de emociones en tiempo real usando IA y modelos de deep learning para detección facial.'
       },
-      
-      // Herramientas y Automatización
       calcLogic: {
         title: 'calcLogic',
         desc: 'Aplicación para lógica proposicional con generación de tablas de verdad y calculadora booleana.'
@@ -93,8 +91,6 @@ const translations = {
         title: 'Permissions System',
         desc: 'Sistema robusto de gestión de permisos y roles para aplicaciones empresariales con control de acceso.'
       },
-      
-      // Configuraciones y Dotfiles
       nixos: {
         title: 'Dotfiles NixOS',
         desc: 'Configuración completa y reproducible de NixOS con gestión declarativa del sistema.'
@@ -111,8 +107,6 @@ const translations = {
         title: 'Gnome ArchLinux',
         desc: 'Configuraciones y scripts personalizados para entorno de escritorio Gnome en ArchLinux.'
       },
-      
-      // Desarrollo Web y APIs
       apiHeroes: {
         title: 'API REST Heroes',
         desc: 'API RESTful para gestión de superhéroes con endpoints CRUD y documentación completa.'
@@ -129,8 +123,6 @@ const translations = {
         title: 'Ruleta PHP',
         desc: 'Proyecto de ruleta interactiva desarrollado en PHP con funcionalidades de juego y apuestas.'
       },
-      
-      // Aplicaciones y Sistemas de Gestión
       sistemaEstudiantil: {
         title: 'Sistema Estudiantil GUI',
         desc: 'Interfaz gráfica completa para gestión estudiantil con inscripciones, notas y reportes.'
@@ -139,8 +131,6 @@ const translations = {
         title: 'Proyecto Sudoku',
         desc: 'Juego de Sudoku interactivo con generador de puzzles, validación y diferentes niveles de dificultad.'
       },
-      
-      // Análisis de Datos
       dataEducacion: {
         title: 'Data Educación',
         desc: 'Proyecto de análisis de datos educativos con visualizaciones y estadísticas del sector educativo.'
@@ -170,17 +160,17 @@ const translations = {
       projects: 'Projects',
       contact: 'Contact',
       homePreview: 'Main page with featured information about my skills and experience.',
-      aboutPreview: 'Learn about my professional career, education, and certifications.',
-      projectsPreview: 'Explore my portfolio of projects in AI, web development, and automation.',
-      contactPreview: 'Connect with me for collaborations, inquiries, or just to talk about technology.'
+      aboutPreview: 'Learn about my professional career, education and certifications.',
+      projectsPreview: 'Explore my portfolio of projects in AI, web development and automation.',
+      contactPreview: 'Connect with me for collaborations, inquiries or just to talk about technology.'
     },
     hero: {
-      greeting: 'Hello, I am',
-      subtitle: 'Information Software Development Analyst.<br>Passionate about technology, innovation, and teaching.<br>Discover my projects and knowledge in the world of development.',
+      greeting: 'Hi, I\'m',
+      subtitle: 'Information software development analyst.<br>Passionate about technology, innovation and teaching.<br>Discover my projects and knowledge in the world of development.',
       viewProjects: 'View projects'
     },
     skills: {
-      title: 'Core Skills',
+      title: 'Main Skills',
       python: 'Python',
       ml: 'Machine Learning',
       dataEng: 'Data Engineering',
@@ -190,15 +180,15 @@ const translations = {
     },
     about: {
       title: 'About Me',
-      intro: 'I am **Deyton Riascos Ortiz**, a software developer with experience in the analysis, development, and optimization of technological solutions for companies in different sectors. I am passionate about innovation, continuous learning, and creating tools that generate real impact.',
+      intro: 'I am <strong>Deyton Riascos Ortiz</strong>, a software developer with experience in analysis, development and optimization of technological solutions for companies in different sectors. I am passionate about innovation, continuous learning and creating tools that generate real impact.',
       experienceTitle: 'Work Experience',
       educationTitle: 'Education',
-      certificationTitle: 'Certifications',
+      certificationsTitle: 'Licenses and Certifications', // Ajustado a tu clave plural
       skillsTitle: 'Knowledge and Skills',
       fullTime: 'Full-time',
       showCredential: 'Show credential',
       aptitudes: 'Skills',
-      // Experience keys
+      // Claves de la experiencia (añadidas para completar el archivo)
       pcaRole: 'Software Developer',
       pcaCompany: 'PCA INGENIERÍA S.A.S.',
       pcaPeriod: 'Sept 2023 - Mar 2024 · 7 months · Palmira, Valle del Cauca, Colombia',
@@ -214,10 +204,10 @@ const translations = {
     },
     projects: {
       title: 'My Projects',
-      subtitle: 'Explore some of the most outstanding projects I have worked on, focused on software, automation, artificial intelligence, and developer tools.',
+      subtitle: 'Explore some of the most outstanding projects I have worked on, focused on software, automation, artificial intelligence and developer tools.',
       viewOn: 'View on',
       
-      // Categories
+      // Categorías
       aiCategory: 'Artificial Intelligence and Computer Vision',
       toolsCategory: 'Tools and Automation',
       configCategory: 'Configurations and Dotfiles',
@@ -225,46 +215,42 @@ const translations = {
       appsCategory: 'Applications and Management Systems',
       dataCategory: 'Data Analysis',
       
-      // AI and Computer Vision
+      // Proyectos individuales
       mugencode: {
         title: 'Mugencode DataNalic',
-        desc: 'Advanced data analysis and visualization platform with statistical processing and analysis tools.'
+        desc: 'Advanced data analysis and visualization platform with processing and statistical analysis tools.'
       },
       removeBg: {
         title: 'Remove Background Img',
-        desc: 'Tool for removing image backgrounds using AI, image processing with neural networks.'
+        desc: 'Tool to remove image backgrounds using AI, image processing with neural networks.'
       },
       handMouse: {
         title: 'Hand Mouse Controller',
-        desc: 'Mouse controller by hand gestures using computer vision, with MediaPipe and OpenCV.'
+        desc: 'Hand gesture mouse controller with computer vision, using MediaPipe and OpenCV.'
       },
       emotion: {
         title: 'Emotion Recognition',
         desc: 'Real-time emotion recognition using AI and deep learning models for facial detection.'
       },
-      
-      // Tools and Automation
       calcLogic: {
         title: 'calcLogic',
         desc: 'Application for propositional logic with truth table generation and boolean calculator.'
       },
       mugenqb: {
         title: 'MugenQB',
-        desc: 'Intelligent question generator and data bank for academic exams and evaluations.'
+        desc: 'Intelligent question generator and data bank for exams and academic evaluations.'
       },
       permissions: {
         title: 'Permissions System',
-        desc: 'Robust system for managing permissions and roles for enterprise applications with access control.'
+        desc: 'Robust permission and role management system for enterprise applications with access control.'
       },
-      
-      // Configurations and Dotfiles
       nixos: {
         title: 'Dotfiles NixOS',
         desc: 'Complete and reproducible NixOS configuration with declarative system management.'
       },
       oldFiles: {
         title: 'First Files Config Gentoo',
-        desc: 'Initial and personalized configurations for Gentoo Linux environments for development.'
+        desc: 'Initial and customized configurations of Gentoo Linux environments for development.'
       },
       gentooBtrfs: {
         title: 'Dotfiles Gentoo Btrfs Thinkpad',
@@ -272,50 +258,44 @@ const translations = {
       },
       gnomeArch: {
         title: 'Gnome ArchLinux',
-        desc: 'Custom configurations and scripts for the Gnome desktop environment on ArchLinux.'
+        desc: 'Custom configurations and scripts for Gnome desktop environment on ArchLinux.'
       },
-      
-      // Web Development and APIs
       apiHeroes: {
         title: 'API REST Heroes',
         desc: 'RESTful API for superhero management with CRUD endpoints and complete documentation.'
       },
       ddsCine: {
-        title: 'DDS Cine',
-        desc: 'Complete web application for cinema management with reservations, movies, and room administration.'
+        title: 'DDS Cinema',
+        desc: 'Complete cinema management web application with reservations, movies and room administration.'
       },
       myLibrary: {
         title: 'My Library',
-        desc: 'Personal library manager with book catalog, loans, and search system.'
+        desc: 'Personal library manager with book catalog, loans and search system.'
       },
       ruleta: {
-        title: 'Ruleta PHP',
+        title: 'PHP Roulette',
         desc: 'Interactive roulette project developed in PHP with game and betting functionalities.'
       },
-      
-      // Applications and Management Systems
       sistemaEstudiantil: {
         title: 'Student System GUI',
-        desc: 'Full graphical interface for student management with enrollment, grades, and reports.'
+        desc: 'Complete graphical interface for student management with enrollments, grades and reports.'
       },
       sudoku: {
         title: 'Sudoku Project',
-        desc: 'Interactive Sudoku game with puzzle generator, validation, and different difficulty levels.'
+        desc: 'Interactive Sudoku game with puzzle generator, validation and different difficulty levels.'
       },
-      
-      // Data Analysis
       dataEducacion: {
-        title: 'Data Education',
+        title: 'Education Data',
         desc: 'Educational data analysis project with visualizations and statistics of the education sector.'
       },
       dataPokemon: {
-        title: 'Data Pokémon Battle',
-        desc: 'Complete data analysis of Pokémon battles with statistics and predictions using ML.'
+        title: 'Pokémon Battle Data',
+        desc: 'Complete analysis of Pokémon battle data with statistics and predictions using ML.'
       }
     },
     contact: {
       title: 'Contact Me',
-      subtitle: 'I am available to collaborate on projects, solve technological problems, or discuss innovation and development.',
+      subtitle: 'I am available to collaborate on projects, solve technological problems or talk about innovation and development.',
       email: 'Email',
       linkedin: 'LinkedIn',
       gitlab: 'GitLab',
@@ -328,161 +308,112 @@ const translations = {
   }
 };
 
-
-/**
- * Función que aplica las traducciones al DOM
- * @param {string} lang - El idioma a aplicar ('es' o 'en')
- */
+// Función para cambiar el idioma
 function setLanguage(lang) {
-  // Asegurarse de que el idioma sea soportado, si no, usar 'es'
-  const finalLang = translations[lang] ? lang : 'es';
-  const t = translations[finalLang];
-
-  // Actualizar el atributo lang del HTML
-  document.documentElement.lang = finalLang;
+  console.log('Cambiando idioma a:', lang); 
   
-  // Guardar la preferencia
-  localStorage.setItem('language', finalLang);
+  const elements = document.querySelectorAll('[data-i18n]');
+  console.log('Elementos encontrados:', elements.length); 
   
-  // Actualizar el botón de idioma
-  const langButton = document.getElementById('lang-toggle');
-  if (langButton) {
-    langButton.textContent = finalLang.toUpperCase();
-  }
-
-  // Aplicar traducciones a todos los elementos con data-i18n
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    let value = getTranslation(t, key);
+  elements.forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    const keys = key.split('.');
+    let translation = translations[lang];
     
-    if (value) {
-        // Para <p> que contienen <br> se usa innerHTML
-        if (el.tagName === 'P' && value.includes('<br>')) {
-             el.innerHTML = value;
-        } else {
-             el.textContent = value;
-        }
+    for (const k of keys) {
+      translation = translation?.[k];
+    }
+    
+    if (translation) {
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+        element.placeholder = translation;
+      } else {
+        // Usa .innerHTML para que las etiquetas <strong> se interpreten como HTML
+        element.innerHTML = translation; 
+      }
     }
   });
-
-  // Re-inicializar las vistas previas de navegación para actualizar el idioma del contenido
-  if (typeof addNavigationPreviews === 'function') {
-    addNavigationPreviews();
-  }
-}
-
-/**
- * Función auxiliar para obtener la traducción anidada
- * @param {object} t - El objeto de traducción del idioma actual
- * @param {string} key - La clave de traducción (ej. 'nav.home')
- * @returns {string|null} - La traducción o null si no se encuentra
- */
-function getTranslation(t, key) {
-  const keys = key.split('.');
-  let current = t;
-  for (const k of keys) {
-    if (current && current.hasOwnProperty(k)) {
-      current = current[k];
-    } else {
-      console.warn(`Missing translation key: ${key}`);
-      return null;
-    }
-  }
-  return typeof current === 'string' ? current : null;
-}
-
-// Lógica para las vistas previas en la navegación
-function addNavigationPreviews() {
-  const navLinks = document.querySelectorAll('nav a');
-  const currentLang = localStorage.getItem('language') || 'es';
   
+  // Guardar preferencia
+  localStorage.setItem('language', lang);
+  
+  // Actualizar botón
+  const langButton = document.getElementById('lang-toggle');
+  if (langButton) {
+    langButton.textContent = lang.toUpperCase();
+    console.log('Botón actualizado a:', lang.toUpperCase()); 
+  }
+  
+  // Actualizar vistas previas de navegación
+  updateNavigationPreviews(lang);
+}
+
+// Actualizar vistas previas con el idioma actual
+function updateNavigationPreviews(lang) {
   const previewsData = {
-    es: {
-      'index.html': {
-        emoji: '🏠',
-        title: translations.es.nav.home,
-        description: translations.es.nav.homePreview
-      },
-      'about.html': {
-        emoji: '👨‍💻',
-        title: translations.es.nav.about,
-        description: translations.es.nav.aboutPreview
-      },
-      'projects.html': {
-        emoji: '💼',
-        title: translations.es.nav.projects,
-        description: translations.es.nav.projectsPreview
-      },
-      'contact.html': {
-        emoji: '📧',
-        title: translations.es.nav.contact,
-        description: translations.es.nav.contactPreview
-      }
+    'index.html': {
+      emoji: '🏠',
+      title: translations[lang].nav.home,
+      description: translations[lang].nav.homePreview
     },
-    en: {
-      'index.html': {
-        emoji: '🏠',
-        title: translations.en.nav.home,
-        description: translations.en.nav.homePreview
-      },
-      'about.html': {
-        emoji: '👨‍💻',
-        title: translations.en.nav.about,
-        description: translations.en.nav.aboutPreview
-      },
-      'projects.html': {
-        emoji: '💼',
-        title: translations.en.nav.projects,
-        description: translations.en.nav.projectsPreview
-      },
-      'contact.html': {
-        emoji: '📧',
-        title: translations.en.nav.contact,
-        description: translations.en.nav.contactPreview
-      }
+    'about.html': {
+      emoji: '👨‍💻',
+      title: translations[lang].nav.about,
+      description: translations[lang].nav.aboutPreview
+    },
+    'projects.html': {
+      emoji: '💼',
+      title: translations[lang].nav.projects,
+      description: translations[lang].nav.projectsPreview
+    },
+    'contact.html': {
+      emoji: '📧',
+      title: translations[lang].nav.contact,
+      description: translations[lang].nav.contactPreview
     }
   };
-
-  const previews = previewsData[currentLang];
   
-  // Remover previews antiguas para evitar duplicados al cambiar de idioma
-  document.querySelectorAll('.nav-preview').forEach(p => p.remove());
-
+  const navLinks = document.querySelectorAll('nav a');
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    const previewData = previews[href];
+    const previewData = previewsData[href];
     
     if (previewData) {
-      // Crear el elemento de vista previa
-      const preview = document.createElement('div');
-      preview.className = 'nav-preview';
-      
-      preview.innerHTML = `
-        <div class="nav-preview-image">${previewData.emoji}</div>
-        <h4>${previewData.title}</h4>
-        <p>${previewData.description}</p>
-      `;
-      
-      link.appendChild(preview);
+      let preview = link.querySelector('.nav-preview');
+      if (preview) {
+        preview.innerHTML = `
+          <div class="nav-preview-image">${previewData.emoji}</div>
+          <h4>${previewData.title}</h4>
+          <p>${previewData.description}</p>
+        `;
+      }
     }
   });
 }
 
 // Inicializar el sistema de idiomas
 function initLanguageSystem() {
-  const savedLang = localStorage.getItem('language') || 'es';
+  console.log('Inicializando sistema de idiomas'); 
   
-  // Aplicar el idioma guardado después de que el main content se haya cargado
+  const savedLang = localStorage.getItem('language') || 'es';
+  console.log('Idioma guardado:', savedLang); 
+  
+  // Aplicar el idioma guardado
   setTimeout(() => {
     setLanguage(savedLang);
   }, 100);
   
   const langButton = document.getElementById('lang-toggle');
+  console.log('Botón de idioma encontrado:', !!langButton); 
   
   if (langButton) {
     langButton.addEventListener('click', () => {
+      console.log('Click en botón de idioma'); 
+      
       const currentLang = localStorage.getItem('language') || 'es';
       const newLang = currentLang === 'es' ? 'en' : 'es';
+      
+      console.log('Cambiando de', currentLang, 'a', newLang); 
       
       // Agregar clase de transición
       document.body.classList.add('theme-transitioning');
@@ -493,10 +424,12 @@ function initLanguageSystem() {
         document.body.classList.remove('theme-transitioning');
       }, 600);
     });
+  } else {
+    console.error('No se encontró el botón de idioma'); 
   }
 }
 
 // Hacer las funciones globales para que puedan ser llamadas desde templates.js
 window.setLanguage = setLanguage;
+window.updateNavigationPreviews = updateNavigationPreviews;
 window.initLanguageSystem = initLanguageSystem;
-window.addNavigationPreviews = addNavigationPreviews;

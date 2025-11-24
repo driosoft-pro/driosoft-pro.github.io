@@ -1,0 +1,153 @@
+{
+  "categories": [
+    {
+      "id": "ai",
+      "name": "🤖 Inteligencia Artificial y Visión Computacional",
+      "icon": "🤖",
+      "projects": [
+        {
+          "icon": "📊",
+          "title": "MugenCode DataNalic",
+          "description": "Plataforma avanzada de análisis de datos y visualización con machine learning.",
+          "url": "https://gitlab.com/driosoft-pro/mugencodedatanalic.git",
+          "platform": "gitlab"
+        },
+        {
+          "icon": "🖼️",
+          "title": "Remove Background Img",
+          "description": "Herramienta de IA para eliminar fondos de imágenes automáticamente con alta precisión.",
+          "url": "https://gitlab.com/driosoft-pro/remove_bagraund_img.git",
+          "platform": "gitlab"
+        },
+        {
+          "icon": "👆",
+          "title": "Hand Mouse Controller",
+          "description": "Control de mouse mediante gestos de mano usando visión artificial y MediaPipe.",
+          "url": "https://gitlab.com/driosoft-pro/hand_mouse_controller.git",
+          "platform": "gitlab"
+        },
+        {
+          "icon": "😊",
+          "title": "Emotion Recognition",
+          "description": "Sistema de reconocimiento de emociones en tiempo real con deep learning.",
+          "url": "https://gitlab.com/driosoft-pro/emotion_recognition.git",
+          "platform": "gitlab"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "🛠️ Herramientas y Automatización",
+      "icon": "🛠️",
+      "projects": [
+        {
+          "icon": "🧮",
+          "title": "calcLogic",
+          "description": "Aplicación para lógica proposicional con tablas de verdad y calculadora lógica.",
+          "url": "https://gitlab.com/driosoft-pro/calclogic.git",
+          "platform": "gitlab"
+        },
+        {
+          "icon": "📝",
+          "title": "MugenQB",
+          "description": "Generador inteligente de preguntas y banco de datos para exámenes académicos.",
+          "url": "https://gitlab.com/driosoft-pro/mugenqb.git",
+          "platform": "gitlab"
+        }
+      ]
+    },
+    {
+      "id": "dotfiles",
+      "name": "⚙️ Configuraciones y Dotfiles",
+      "icon": "⚙️",
+      "projects": [
+        {
+          "icon": "🐧",
+          "title": "First Files Config Gentoo",
+          "description": "Configuraciones antiguas de entornos Linux personalizadas para Gentoo.",
+          "url": "https://gitlab.com/driosoft-pro/oldotfiles.git",
+          "platform": "gitlab"
+        },
+        {
+          "icon": "💻",
+          "title": "Dotfiles Gentoo Btrfs Thinkpad",
+          "description": "Dotfiles optimizados para Gentoo con sistema de archivos Btrfs en Thinkpad.",
+          "url": "https://gitlab.com/driosoft-pro/dotfilesgentoobtrfsthinpad.git",
+          "platform": "gitlab"
+        },
+        {
+          "icon": "🎨",
+          "title": "Gnome ArchLinux",
+          "description": "Configuraciones y scripts personalizados para Gnome Desktop en ArchLinux.",
+          "url": "https://gitlab.com/driosoft-pro/gnome-archlinux.git",
+          "platform": "gitlab"
+        }
+      ]
+    },
+    {
+      "id": "apps",
+      "name": "📱 Aplicaciones y Proyectos de Software",
+      "icon": "📱",
+      "projects": [
+        {
+          "icon": "🚦",
+          "title": "Sistema de Comparendos - Backend",
+          "description": "API REST modular para gestión de comparendos de tránsito. Node.js + Express + Supabase + MongoDB con autenticación JWT y arquitectura escalable.",
+          "url": "https://github.com/driosoft-pro/comparendo-transito-backend",
+          "platform": "github",
+          "featured": true
+        },
+        {
+          "icon": "🌐",
+          "title": "Sistema de Comparendos - Frontend",
+          "description": "Panel de administración moderno para comparendos de tránsito. React + Vite + Tailwind CSS con tema claro/oscuro y rutas protegidas.",
+          "url": "https://github.com/driosoft-pro/comparendo-transito-frontend",
+          "platform": "github",
+          "featured": true
+        },
+        {
+          "icon": "🎬",
+          "title": "DDS Cine",
+          "description": "Aplicación de gestión de cine con sistema de reservas y administración de funciones.",
+          "url": "https://github.com/driosoft-pro/dds_cine.git",
+          "platform": "github"
+        },
+        {
+          "icon": "📚",
+          "title": "My Library",
+          "description": "Gestor de biblioteca personal para organizar y catalogar tu colección de libros.",
+          "url": "https://github.com/driosoft-pro/my_library.git",
+          "platform": "github"
+        },
+        {
+          "icon": "🎓",
+          "title": "Sistema Estudiantil GUI",
+          "description": "Interfaz gráfica completa para gestión académica y administrativa estudiantil.",
+          "url": "https://github.com/driosoft-pro/sistema_estudiantil_GUI.git",
+          "platform": "github"
+        },
+        {
+          "icon": "🎰",
+          "title": "Ruleta PHP",
+          "description": "Proyecto interactivo de ruleta desarrollado en PHP con interfaz dinámica.",
+          "url": "https://github.com/driosoft-pro/Ruleta_Php.git",
+          "platform": "github"
+        },
+        {
+          "icon": "📊",
+          "title": "Data Educación",
+          "description": "Análisis y visualización de datos educativos con insights estadísticos.",
+          "url": "https://github.com/driosoft-pro/dataEducacion.git",
+          "platform": "github"
+        },
+        {
+          "icon": "⚔️",
+          "title": "Data Pokémon Battle",
+          "description": "Análisis de datos y estadísticas de batallas Pokémon con visualizaciones.",
+          "url": "https://github.com/driosoft-pro/DataPokemonBattle.git",
+          "platform": "github"
+        }
+      ]
+    }
+  ]
+}

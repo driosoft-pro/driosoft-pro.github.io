@@ -1,15 +1,18 @@
-<header class="main-header">
-  <div class="container header-flex">
-    <img src="assets/img/logo.png" alt="Logo Deyton Riascos" class="logo" />
+<header>
+  <div class="container">
+    <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+      <img src="assets/img/logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 8px;" />
+      <span>Driosoft-Pro</span>
+    </a>
     <nav>
-      <a href="index.html" data-i18n="nav.home">Inicio</a>
-      <a href="about.html" data-i18n="nav.about">Sobre mí</a>
-      <a href="projects.html" data-i18n="nav.projects">Proyectos</a>
-      <a href="contact.html" data-i18n="nav.contact">Contacto</a>
+      <ul>
+        <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li><a href="about.html" data-es="Sobre Mí" data-en="About">Sobre Mí</a></li>
+        <li><a href="projects.html" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+        <li><a href="contact.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        <li><button class="lang-toggle-btn" id="lang-toggle" title="Cambiar idioma / Change language">�🇸</button></li>
+        <li><button class="theme-toggle-btn" id="theme-toggle" title="Cambiar tema / Change theme">🌙</button></li>
+      </ul>
     </nav>
-    <div class="header-controls">
-      <button id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma">ES</button>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">🌙</button>
-    </div>
   </div>
 </header>

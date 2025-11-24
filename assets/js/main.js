@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Animación de aparición suave para las tarjetas de proyectos
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.project-card');
@@ -10,26 +11,68 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.transform = 'translateY(0)';
     }, 200 + i * 120);
   });
+=======
+// ============================================
+// TOGGLE DE TEMA - Solo icono
+// ============================================
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
 
-  // Inicializar el botón de tema si ya está en el DOM
-  if (document.getElementById('theme-toggle')) {
-    themeToggleInit();
+  if (!btn) return;
+>>>>>>> 50b0d6d03ded9a127e413a48ccbcb9469605291e
+
+  // Cargar tema guardado
+  const saved = localStorage.getItem('theme') || 'dark';
+
+  if (saved === 'light') {
+    document.body.classList.add('light-theme');
+    btn.textContent = '☀️';
+    btn.title = 'Cambiar a tema oscuro / Switch to dark theme';
+  } else {
+    btn.title = 'Cambiar a tema claro / Switch to light theme';
   }
 
-  // Actualizar año en el footer automáticamente
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
+  // Click handler
+  btn.onclick = function () {
+    document.body.classList.toggle('light-theme');
+    const isLight = document.body.classList.contains('light-theme');
+    const theme = isLight ? 'light' : 'dark';
+
+    localStorage.setItem('theme', theme);
+    btn.textContent = isLight ? '☀️' : '🌙';
+    btn.title = isLight ? 'Cambiar a tema oscuro / Switch to dark theme' : 'Cambiar a tema claro / Switch to light theme';
+  };
+}
+
+// ============================================
+// TOGGLE DE IDIOMA - Solo icono
+// ============================================
+function initLangToggle() {
+  const btn = document.getElementById('lang-toggle');
+
+  if (!btn) return;
+
+  // Cargar idioma guardado
+  const savedLang = localStorage.getItem('lang') || 'es';
+
+  // Aplicar idioma guardado inmediatamente
+  applyLanguage(savedLang);
+
+  // Actualizar icono según idioma
+  if (savedLang === 'en') {
+    btn.textContent = 'en';
+    btn.title = 'Cambiar a español / Switch to Spanish';
+  } else {
+    btn.textContent = 'es';
+    btn.title = 'Cambiar a inglés / Switch to English';
   }
-});
 
-// Función global para inicializar el botón de tema (usada por templates.js)
-function themeToggleInit() {
-  const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const savedTheme = localStorage.getItem('theme');
+  // Click handler
+  btn.onclick = function () {
+    const currentLang = localStorage.getItem('lang') || 'es';
+    const newLang = currentLang === 'es' ? 'en' : 'es';
 
+<<<<<<< HEAD
   function setTheme(theme, withTransition = false) {
     if (withTransition) {
       body.classList.add('theme-transitioning');
@@ -144,3 +187,59 @@ document.addEventListener('DOMContentLoaded', () => {
   // Esperar un momento para asegurar que el header está cargado
   setTimeout(addNavigationPreviews, 100);
 });
+=======
+    applyLanguage(newLang);
+    localStorage.setItem('lang', newLang);
+
+    // Actualizar icono
+    btn.textContent = newLang === 'es' ? 'es' : 'en';
+    btn.title = newLang === 'es' ? 'Cambiar a inglés / Switch to English' : 'Cambiar a español / Switch to Spanish';
+  };
+}
+
+function applyLanguage(lang) {
+  // Cambiar textos con data attributes
+  document.querySelectorAll('[data-es][data-en]').forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) {
+      el.textContent = text;
+    }
+  });
+}
+
+// ============================================
+// OTRAS FUNCIONES
+// ============================================
+function updateYear() {
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+}
+
+// ============================================
+// INIT
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  // Aplicar idioma guardado ANTES de que se vea la página
+  const savedLang = localStorage.getItem('lang') || 'es';
+  applyLanguage(savedLang);
+
+  // Aplicar tema guardado ANTES de que se vea la página
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+  }
+
+  // Inicializar botones después de cargar templates
+  setTimeout(() => {
+    initThemeToggle();
+    initLangToggle();
+  }, 100);
+
+  setTimeout(() => {
+    initThemeToggle();
+    initLangToggle();
+  }, 300);
+
+  updateYear();
+});
+>>>>>>> 50b0d6d03ded9a127e413a48ccbcb9469605291e

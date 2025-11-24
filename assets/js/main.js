@@ -1,55 +1,119 @@
+// ============================================
+// TOGGLE DE TEMA - Versión simplificada
+// ============================================
+function initThemeToggle() {
+  console.log('🔍 Buscando botón de tema...');
+  const btn = document.getElementById('theme-toggle');
 
-// Animación de aparición suave para las tarjetas de proyectos
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach((card, i) => {
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(30px)';
-    setTimeout(() => {
-      card.style.transition = 'opacity 0.7s, transform 0.7s';
-      card.style.opacity = 1;
-      card.style.transform = 'translateY(0)';
-    }, 200 + i * 120);
-  });
-
-  // Inicializar el botón de tema si ya está en el DOM
-  if (document.getElementById('theme-toggle')) {
-    themeToggleInit();
+  if (!btn) {
+    console.error('❌ Botón de tema NO encontrado');
+    return;
   }
 
-  // Actualizar año en el footer automáticamente
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-});
+  console.log('✅ Botón encontrado:', btn);
 
-// Función global para inicializar el botón de tema (usada por templates.js)
-function themeToggleInit() {
-  const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const savedTheme = localStorage.getItem('theme');
+  // Cargar tema guardado
+  const saved = localStorage.getItem('theme') || 'dark';
+  console.log('📦 Tema guardado:', saved);
 
-  function setTheme(theme) {
-    if (theme === 'light') {
-      body.classList.add('light');
-      themeToggle.textContent = '☀️';
-    } else {
-      body.classList.remove('light');
-      themeToggle.textContent = '🌙';
-    }
+  if (saved === 'light') {
+    document.body.classList.add('light-theme');
+    btn.textContent = '☀️ Tema';
+    console.log('🌞 Aplicado tema claro');
   }
 
-  // Inicializar tema
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else if (!prefersDark) {
-    setTheme('light');
+  // Click handler
+  btn.onclick = function () {
+    console.log('🖱️ Click en botón de tema');
+    document.body.classList.toggle('light-theme');
+    const isLight = document.body.classList.contains('light-theme');
+    const theme = isLight ? 'light' : 'dark';
+
+    localStorage.setItem('theme', theme);
+    btn.textContent = isLight ? '☀️ Tema' : '🌙 Tema';
+
+    console.log('✅ Tema cambiado a:', theme);
+    console.log('📝 Clases del body:', document.body.className);
+  };
+
+  console.log('✅ Toggle inicializado correctamente');
+}
+
+// ============================================
+// TOGGLE DE IDIOMA
+// ============================================
+function initLangToggle() {
+  console.log('🔍 Buscando botón de idioma...');
+  const btn = document.getElementById('lang-toggle');
+
+  if (!btn) {
+    console.error('❌ Botón de idioma NO encontrado');
+    return;
   }
-  themeToggle.addEventListener('click', () => {
-    const isLight = body.classList.toggle('light');
-    setTheme(isLight ? 'light' : 'dark');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+  console.log('✅ Botón de idioma encontrado');
+
+  // Cargar idioma guardado
+  const savedLang = localStorage.getItem('lang') || 'es';
+  console.log('📦 Idioma guardado:', savedLang);
+
+  // Aplicar idioma guardado
+  if (savedLang === 'en') {
+    applyLanguage('en');
+    btn.textContent = '🌐 EN';
+  }
+
+  // Click handler
+  btn.onclick = function () {
+    const currentLang = localStorage.getItem('lang') || 'es';
+    const newLang = currentLang === 'es' ? 'en' : 'es';
+
+    applyLanguage(newLang);
+    localStorage.setItem('lang', newLang);
+    btn.textContent = newLang === 'es' ? '🌐 ES' : '🌐 EN';
+
+    console.log('✅ Idioma cambiado a:', newLang);
+  };
+
+  console.log('✅ Toggle de idioma inicializado');
+}
+
+function applyLanguage(lang) {
+  // Cambiar textos con data attributes
+  document.querySelectorAll('[data-es][data-en]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
   });
 }
+
+// ============================================
+// OTRAS FUNCIONES
+// ============================================
+function updateYear() {
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+}
+
+// ============================================
+// INIT
+// ============================================
+console.log('📄 Script main.js cargado');
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('🚀 DOM listo');
+
+  // Intentar varias veces
+  initThemeToggle();
+  initLangToggle();
+
+  setTimeout(() => {
+    initThemeToggle();
+    initLangToggle();
+  }, 100);
+
+  setTimeout(() => {
+    initThemeToggle();
+    initLangToggle();
+  }, 300);
+
+  updateYear();
+});

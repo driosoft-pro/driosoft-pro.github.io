@@ -1,12 +1,18 @@
-<header class="main-header">
-  <div class="container header-flex">
-    <img src="assets/img/logo.png" alt="Logo" class="logo" />
+<header>
+  <div class="container">
+    <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+      <img src="assets/img/logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 8px;" />
+      <span>Deyton RO</span>
+    </a>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="about.html">Sobre mí</a>
-      <a href="projects.html">Proyectos</a>
-      <a href="contact.html">Contacto</a>
+      <ul>
+        <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li><a href="about.html" data-es="Sobre Mí" data-en="About">Sobre Mí</a></li>
+        <li><a href="projects.html" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+        <li><a href="contact.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        <li><button class="lang-toggle-btn" id="lang-toggle">🌐 ES</button></li>
+        <li><button class="theme-toggle-btn" id="theme-toggle">🌙 Tema</button></li>
+      </ul>
     </nav>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">🌙</button>
   </div>
-</header> 
+</header>

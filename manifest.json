@@ -1,0 +1,31 @@
+{
+  "name": "Portafolio Deyton Riascos Ortiz",
+  "short_name": "Portafolio DRO",
+  "description": "Portafolio profesional de desarrollo de software, IA y automatización",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#282a36",
+  "theme_color": "#bd93f9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "portfolio",
+    "developer",
+    "technology"
+  ],
+  "lang": "es",
+  "dir": "ltr"
+}

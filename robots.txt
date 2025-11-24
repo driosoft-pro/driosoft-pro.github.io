@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tuusuario.github.io/mugencode_page/sitemap.xml

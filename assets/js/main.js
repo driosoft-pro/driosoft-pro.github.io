@@ -1,66 +1,55 @@
 // ============================================
-// TOGGLE DE TEMA - Versión simplificada
+// TOGGLE DE TEMA - Solo icono
 // ============================================
 function initThemeToggle() {
-  console.log('🔍 Buscando botón de tema...');
   const btn = document.getElementById('theme-toggle');
 
-  if (!btn) {
-    console.error('❌ Botón de tema NO encontrado');
-    return;
-  }
-
-  console.log('✅ Botón encontrado:', btn);
+  if (!btn) return;
 
   // Cargar tema guardado
   const saved = localStorage.getItem('theme') || 'dark';
-  console.log('📦 Tema guardado:', saved);
 
   if (saved === 'light') {
     document.body.classList.add('light-theme');
-    btn.textContent = '☀️ Tema';
-    console.log('🌞 Aplicado tema claro');
+    btn.textContent = '☀️';
+    btn.title = 'Cambiar a tema oscuro / Switch to dark theme';
+  } else {
+    btn.title = 'Cambiar a tema claro / Switch to light theme';
   }
 
   // Click handler
   btn.onclick = function () {
-    console.log('🖱️ Click en botón de tema');
     document.body.classList.toggle('light-theme');
     const isLight = document.body.classList.contains('light-theme');
     const theme = isLight ? 'light' : 'dark';
 
     localStorage.setItem('theme', theme);
-    btn.textContent = isLight ? '☀️ Tema' : '🌙 Tema';
-
-    console.log('✅ Tema cambiado a:', theme);
-    console.log('📝 Clases del body:', document.body.className);
+    btn.textContent = isLight ? '☀️' : '🌙';
+    btn.title = isLight ? 'Cambiar a tema oscuro / Switch to dark theme' : 'Cambiar a tema claro / Switch to light theme';
   };
-
-  console.log('✅ Toggle inicializado correctamente');
 }
 
 // ============================================
-// TOGGLE DE IDIOMA
+// TOGGLE DE IDIOMA - Solo icono
 // ============================================
 function initLangToggle() {
-  console.log('🔍 Buscando botón de idioma...');
   const btn = document.getElementById('lang-toggle');
 
-  if (!btn) {
-    console.error('❌ Botón de idioma NO encontrado');
-    return;
-  }
-
-  console.log('✅ Botón de idioma encontrado');
+  if (!btn) return;
 
   // Cargar idioma guardado
   const savedLang = localStorage.getItem('lang') || 'es';
-  console.log('📦 Idioma guardado:', savedLang);
 
-  // Aplicar idioma guardado
+  // Aplicar idioma guardado inmediatamente
+  applyLanguage(savedLang);
+
+  // Actualizar icono según idioma
   if (savedLang === 'en') {
-    applyLanguage('en');
-    btn.textContent = '🌐 EN';
+    btn.textContent = 'en';
+    btn.title = 'Cambiar a español / Switch to Spanish';
+  } else {
+    btn.textContent = 'es';
+    btn.title = 'Cambiar a inglés / Switch to English';
   }
 
   // Click handler
@@ -70,18 +59,20 @@ function initLangToggle() {
 
     applyLanguage(newLang);
     localStorage.setItem('lang', newLang);
-    btn.textContent = newLang === 'es' ? '🌐 ES' : '🌐 EN';
 
-    console.log('✅ Idioma cambiado a:', newLang);
+    // Actualizar icono
+    btn.textContent = newLang === 'es' ? 'es' : 'en';
+    btn.title = newLang === 'es' ? 'Cambiar a inglés / Switch to English' : 'Cambiar a español / Switch to Spanish';
   };
-
-  console.log('✅ Toggle de idioma inicializado');
 }
 
 function applyLanguage(lang) {
   // Cambiar textos con data attributes
   document.querySelectorAll('[data-es][data-en]').forEach(el => {
-    el.textContent = el.getAttribute(`data-${lang}`);
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) {
+      el.textContent = text;
+    }
   });
 }
 
@@ -96,15 +87,18 @@ function updateYear() {
 // ============================================
 // INIT
 // ============================================
-console.log('📄 Script main.js cargado');
-
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🚀 DOM listo');
+  // Aplicar idioma guardado ANTES de que se vea la página
+  const savedLang = localStorage.getItem('lang') || 'es';
+  applyLanguage(savedLang);
 
-  // Intentar varias veces
-  initThemeToggle();
-  initLangToggle();
+  // Aplicar tema guardado ANTES de que se vea la página
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+  }
 
+  // Inicializar botones después de cargar templates
   setTimeout(() => {
     initThemeToggle();
     initLangToggle();

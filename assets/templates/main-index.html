@@ -1,88 +1,67 @@
-<div class="container">
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>
-      <span data-es="Hola, soy" data-en="Hi, I'm">Hola, soy</span> <span class="text-gradient">Deyton Riascos
-        Ortiz</span>
-    </h1>
-    <p class="subtitle"
-      data-es="Desarrollador Full Stack & Data Engineer especializado en crear soluciones innovadoras con Python, JavaScript y tecnologías modernas"
-      data-en="Full Stack Developer & Data Engineer specialized in creating innovative solutions with Python, JavaScript and modern technologies">
-      Desarrollador Full Stack & Data Engineer especializado en crear soluciones innovadoras con Python, JavaScript y
-      tecnologías modernas
-    </p>
-    <a href="projects.html" class="btn" data-es="Ver Mis Proyectos" data-en="View My Projects">Ver Mis Proyectos</a>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="section">
-    <h2>🚀 <span data-es="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</span></h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>💻 Frontend</h3>
-        <ul class="skills-list">
-          <li>React & Next.js</li>
-          <li>Angular</li>
-          <li>JavaScript/TypeScript</li>
-          <li>HTML5 & CSS3</li>
-          <li>Tailwind CSS</li>
-        </ul>
-      </div>
-
-      <div class="skill-category">
-        <h3>⚙️ Backend</h3>
-        <ul class="skills-list">
-          <li>Python & Django</li>
-          <li>C# & .NET</li>
-          <li>PHP</li>
-          <li>Node.js & Express</li>
-          <li>REST APIs & SOAP</li>
-        </ul>
-      </div>
-
-      <div class="skill-category">
-        <h3>🗄️ <span data-es="Bases de Datos" data-en="Databases">Bases de Datos</span></h3>
-        <ul class="skills-list">
-          <li>Oracle Database & PL/SQL</li>
-          <li>SQL Server</li>
-          <li>PostgreSQL & MongoDB</li>
-          <li>MySQL</li>
-          <li>Oracle FORMS & APEX</li>
-        </ul>
-      </div>
-
-      <div class="skill-category">
-        <h3>🤖 Data & IA</h3>
-        <ul class="skills-list">
-          <li>Machine Learning</li>
-          <li>Data Engineering</li>
-          <li>TensorFlow & PyTorch</li>
-          <li>Pandas & NumPy</li>
-          <li>Pentaho</li>
-        </ul>
-      </div>
-
-      <div class="skill-category">
-        <h3>🛠️ DevOps & Tools</h3>
-        <ul class="skills-list">
-          <li>Git & GitHub/GitLab</li>
-          <li>Docker</li>
-          <li>Linux</li>
-          <li>CI/CD</li>
-          <li>Scrum & Agile</li>
-        </ul>
-      </div>
-
-      <div class="skill-category">
-        <h3>📊 <span data-es="Herramientas" data-en="Tools">Herramientas</span></h3>
-        <ul class="skills-list">
-          <li>Visual Basic .NET</li>
-          <li>XML & JSON</li>
-          <li>REPORT</li>
-          <li>Laravel</li>
-          <li>Symfony</li>
-        </ul>
-      </div>
+<div class="window focused">
+  <div class="window-header">
+    <div class="window-title">
+      <i class="fas fa-terminal"></i>
+      <span>deyton@driosoft: ~/home</span>
     </div>
-  </section>
+    <div class="window-controls">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+  </div>
+  <div class="window-content">
+    <!-- Hero Section -->
+    <section class="hero terminal-text">
+      <p class="prompt-line"><span class="prompt">$</span><span class="command">whoami</span></p>
+      <h1>
+        <span class="text-gradient">Deyton Riascos Ortiz</span>
+      </h1>
+      <p class="subtitle"
+        data-es="Full Stack Developer & Data Engineer | Especialista en soluciones escalables"
+        data-en="Full Stack Developer & Data Engineer | Specialized in scalable solutions">
+        Full Stack Developer & Data Engineer | Especialista en soluciones escalables
+      </p>
+      <br>
+      <div class="hero-btns">
+        <a href="projects.html" class="btn btn-primary" data-es="ls projects/" data-en="ls projects/">ls projects/</a>
+        <a href="contact.html" class="btn btn-secondary" data-es="./contact.sh" data-en="./contact.sh">./contact.sh</a>
+      </div>
+    </section>
+
+    <br><br>
+
+    <!-- Skills Section -->
+    <section class="section">
+      <p class="prompt-line"><span class="prompt">$</span><span class="command">neofetch --skills</span></p>
+      <br>
+      <div class="skills-grid">
+        <!-- Languages -->
+        <div class="skill-category">
+          <h3 data-es="Lenguajes" data-en="Languages"><i class="devicon-code-plain"></i> Lenguajes</h3>
+          <ul class="skills-list">
+            <li><i class="devicon-python-plain"></i> Python</li>
+            <li><i class="devicon-javascript-plain"></i> JavaScript</li>
+            <li><i class="devicon-typescript-plain"></i> TypeScript</li>
+            <li><i class="devicon-csharp-plain"></i> C#</li>
+            <li><i class="devicon-php-plain"></i> PHP</li>
+            <li><i class="devicon-oracle-original"></i> PL/SQL</li>
+          </ul>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="skill-category">
+          <h3 data-es="Frameworks" data-en="Frameworks"><i class="devicon-react-original"></i> Frameworks</h3>
+          <ul class="skills-list">
+            <li><i class="devicon-react-original"></i> React</li>
+            <li><i class="devicon-nextjs-original"></i> Next.js</li>
+            <li><i class="devicon-angularjs-plain"></i> Angular</li>
+            <li><i class="devicon-django-plain"></i> Django</li>
+            <li><i class="devicon-laravel-original"></i> Laravel</li>
+            <li><i class="devicon-dotnetcore-plain"></i> .NET</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>

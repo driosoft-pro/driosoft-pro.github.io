@@ -556,22 +556,24 @@ function initTicTacToe() {
   
   function checkResult() {
     let roundWon = false;
+    let winnerSymbol = "";
     for (let pattern of winPatterns) {
       const [a, b, c] = pattern;
       if (gameState[a] !== "" && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
         roundWon = true;
+        winnerSymbol = gameState[a];
         break;
       }
     }
     
     if (roundWon) {
-      const winner = gameState.includes(player) ? "PLAYER" : "CPU";
+      const winner = winnerSymbol === player ? "PLAYER" : "DRZ";
       const lang = localStorage.getItem('lang') || 'es';
       if (winner === "PLAYER") {
         status.textContent = lang === 'en' ? "YOU WIN! [SYSTEM BREACHED]" : "¡GANASTE! [SISTEMA VULNERADO]";
         status.style.color = "#0f0";
       } else {
-        status.textContent = lang === 'en' ? "CPU WINS. [ACCESS DENIED]" : "GANÓ LA CPU. [ACCESO DENEGADO]";
+        status.textContent = lang === 'en' ? "I WIN. [ACCESS DENIED]" : "GANÉ YO. [ACCESO DENEGADO]";
         status.style.color = "#f00";
       }
       gameActive = false;

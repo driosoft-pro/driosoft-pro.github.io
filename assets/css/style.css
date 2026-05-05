@@ -42,6 +42,17 @@ body.light {
   --glass-border: rgba(189, 147, 249, 0.4);
   --shadow-lg: 0 15px 45px rgba(0, 0, 0, 0.15);
   --current-line: #e6e6e6;
+  --selection: #d1d1d1;
+  --comment: #6272a4;
+  
+  /* Adjusted Dracula Colors for Light Mode */
+  --purple: #9580ff;
+  --pink: #ff92d0;
+  --cyan: #00afca;
+  --green: #26a641;
+  --red: #cf222e;
+  --orange: #bc4c00;
+  --yellow: #966600;
 }
 
 * {
@@ -744,18 +755,19 @@ body.light .prompt, body.light .command, body.light .info-label { color: var(--p
   justify-content: flex-start !important;
   font-size: 1rem !important;
 }
-/* Game Styles */
+/* Game Styles - Dracula Themed */
 .game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: #000;
-  color: #0f0;
+  background: var(--window-bg);
+  color: var(--fg);
   font-family: var(--font-mono);
   border-radius: var(--radius-md);
-  box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.1);
+  border: 1px solid var(--window-border);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .ttt-board {
@@ -763,9 +775,10 @@ body.light .prompt, body.light .command, body.light .info-label { color: var(--p
   grid-template-columns: repeat(3, 80px);
   grid-template-rows: repeat(3, 80px);
   gap: 10px;
-  border: 2px solid #0f0;
+  border: 2px solid var(--accent-primary);
   padding: 10px;
-  background: #050505;
+  background: var(--current-line);
+  border-radius: var(--radius-sm);
 }
 
 .ttt-cell {
@@ -774,62 +787,80 @@ body.light .prompt, body.light .command, body.light .info-label { color: var(--p
   justify-content: center;
   font-size: 2.5rem;
   font-weight: bold;
-  border: 1px solid #050;
+  border: 1px solid var(--window-border);
+  background: var(--window-bg);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  border-radius: var(--radius-sm);
 }
 
 .ttt-cell:hover {
-  background: rgba(0, 255, 0, 0.1);
+  background: var(--selection);
+  transform: scale(1.05);
 }
 
 .ttt-cell.x::before {
   content: 'X';
-  color: #0f0;
-  text-shadow: 0 0 10px #0f0;
+  color: var(--green);
+  text-shadow: 0 0 10px rgba(80, 250, 123, 0.3);
 }
 
 .ttt-cell.o::before {
   content: 'O';
-  color: #f0f;
-  text-shadow: 0 0 10px #f0f;
+  color: var(--pink);
+  text-shadow: 0 0 10px rgba(255, 121, 198, 0.3);
 }
 
 #game-status {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   height: 1.5rem;
+  font-weight: bold;
+  text-align: center;
 }
+
+#game-status.win-player { color: var(--green); }
+#game-status.win-cpu { color: var(--red); }
+#game-status.draw { color: var(--orange); }
+#game-status.thinking { color: var(--comment); }
 
 .terminal-header {
   align-self: flex-start;
   width: 100%;
   margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--window-border);
+  padding-bottom: 0.5rem;
 }
 
-#reset-game {
+.game-controls {
+  display: flex;
+  gap: 1rem;
   margin-top: 1rem;
-  border: 1px solid #0f0;
+}
+
+#reset-game, #cpu-start {
+  border: 1px solid var(--accent-primary);
   background: transparent;
-  color: #0f0;
+  color: var(--accent-primary);
   padding: 0.5rem 1.2rem;
   cursor: pointer;
   font-family: var(--font-mono);
+  border-radius: var(--radius-sm);
   transition: all 0.3s;
 }
 
-#reset-game:hover {
-  background: #0f0;
-  color: #000;
-  box-shadow: 0 0 15px #0f0;
+#reset-game:hover, #cpu-start:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 0 15px var(--accent-primary);
 }
 
 @media (max-width: 480px) {
   .ttt-board {
-    grid-template-columns: repeat(3, 60px);
-    grid-template-rows: repeat(3, 60px);
+    grid-template-columns: repeat(3, 65px);
+    grid-template-rows: repeat(3, 65px);
   }
   .ttt-cell {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }

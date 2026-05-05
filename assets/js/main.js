@@ -515,6 +515,7 @@ function initTicTacToe() {
     if (gameActive) {
       const lang = localStorage.getItem('lang') || 'es';
       status.textContent = lang === 'en' ? "Thinking..." : "Pensando...";
+      status.className = 'terminal-text thinking';
       setTimeout(cpuMove, 500);
     }
   }
@@ -535,6 +536,7 @@ function initTicTacToe() {
       if (gameActive) {
         const lang = localStorage.getItem('lang') || 'es';
         status.textContent = lang === 'en' ? "Your turn (X)" : "Tu turno (X)";
+        status.className = 'terminal-text';
       }
     }
   }
@@ -571,10 +573,10 @@ function initTicTacToe() {
       const lang = localStorage.getItem('lang') || 'es';
       if (winner === "PLAYER") {
         status.textContent = lang === 'en' ? "YOU WIN! [SYSTEM BREACHED]" : "¡GANASTE! [SISTEMA VULNERADO]";
-        status.style.color = "#0f0";
+        status.className = 'terminal-text win-player';
       } else {
         status.textContent = lang === 'en' ? "I WIN. [ACCESS DENIED]" : "GANÉ YO. [ACCESO DENEGADO]";
-        status.style.color = "#f00";
+        status.className = 'terminal-text win-cpu';
       }
       gameActive = false;
       return;
@@ -583,6 +585,7 @@ function initTicTacToe() {
     if (!gameState.includes("")) {
       const lang = localStorage.getItem('lang') || 'es';
       status.textContent = lang === 'en' ? "DRAW. [DATA CORRUPTED]" : "EMPATE. [DATOS CORRUPTOS]";
+      status.className = 'terminal-text draw';
       gameActive = false;
     }
   }
@@ -592,7 +595,7 @@ function initTicTacToe() {
     gameActive = true;
     const lang = localStorage.getItem('lang') || 'es';
     status.textContent = lang === 'en' ? "Your turn (X)" : "Tu turno (X)";
-    status.style.color = "#0f0";
+    status.className = 'terminal-text';
     cells.forEach(cell => {
       cell.classList.remove('x', 'o');
     });
@@ -602,6 +605,7 @@ function initTicTacToe() {
     resetGame();
     const lang = localStorage.getItem('lang') || 'es';
     status.textContent = lang === 'en' ? "Thinking..." : "Pensando...";
+    status.className = 'terminal-text thinking';
     setTimeout(cpuMove, 500);
   }
   

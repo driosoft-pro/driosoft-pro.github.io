@@ -97,12 +97,20 @@
       "icon": "fas fa-mobile-alt",
       "projects": [
         {
+          "icon": "fas fa-traffic-light",
+          "title": "SIMCOMP",
+          "description": "Sistema integral de gestión y control de comparendos de tránsito con arquitectura Swarm y microservicios.",
+          "url": "https://github.com/driosoft-pro/simcomp.git",
+          "platform": "github",
+          "featured": true
+        },
+        {
           "icon": "fas fa-server",
           "title": "Sistema de Comparendos - Backend",
           "description": "API REST modular para gestión de comparendos de tránsito. Node.js + Express + Supabase + MongoDB con autenticación JWT y arquitectura escalable.",
           "url": "https://github.com/driosoft-pro/comparendo-transito-backend",
           "platform": "github",
-          "featured": true
+          "featured": false
         },
         {
           "icon": "fas fa-window-maximize",
@@ -110,7 +118,7 @@
           "description": "Panel de administración moderno para comparendos de tránsito. React + Vite + Tailwind CSS con tema claro/oscuro y rutas protegidas.",
           "url": "https://github.com/driosoft-pro/comparendo-transito-frontend",
           "platform": "github",
-          "featured": true
+          "featured": false
         },
         {
           "icon": "fas fa-film",
@@ -138,6 +146,20 @@
           "title": "Ruleta PHP",
           "description": "Proyecto interactivo de ruleta desarrollado en PHP con interfaz dinámica.",
           "url": "https://github.com/driosoft-pro/Ruleta_Php.git",
+          "platform": "github"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Análisis de Datos y Estadística",
+      "icon": "fas fa-chart-line",
+      "projects": [
+        {
+          "icon": "fas fa-bolt",
+          "title": "Consumo Energía - Lab 1",
+          "description": "Análisis y modelado de datos de consumo de energía eléctrica para laboratorio de Estadística y Probabilidad.",
+          "url": "https://github.com/driosoft-pro/eyp-lab1-consumo-energia.git",
           "platform": "github"
         },
         {

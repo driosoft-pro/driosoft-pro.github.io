@@ -414,7 +414,8 @@ function updateWorkspaceDots(templateName) {
     'main-index': 0, 
     'main-about': 1, 
     'main-projects': 2, 
-    'main-contact': 3 
+    'main-contact': 3,
+    'main-game': 4
   };
   const index = mapping[templateName] ?? 4; // 5th dot for unknown/other
   
@@ -471,6 +472,10 @@ window.openWindow = async (name) => {
       if (window.loadProjects) window.loadProjects();
     }
     
+    if (name === 'main-game') {
+      initTicTacToe();
+    }
+    
     initWindowInteractivity();
     
     document.querySelectorAll('nav a').forEach(a => {
@@ -482,7 +487,129 @@ window.openWindow = async (name) => {
   }
 };
 
+function initTicTacToe() {
+  const board = document.getElementById('ttt-board');
+  const cells = document.querySelectorAll('.ttt-cell');
+  const status = document.getElementById('game-status');
+  const resetBtn = document.getElementById('reset-game');
+  const cpuStartBtn = document.getElementById('cpu-start');
+  
+  if (!board || !cells || !status || !resetBtn || !cpuStartBtn) return;
+
+  let gameState = ["", "", "", "", "", "", "", "", ""];
+  let gameActive = true;
+  const player = "X";
+  const cpu = "O";
+  
+  const winPatterns = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
+  ];
+  
+  function handleCellClick(e) {
+    const index = e.target.getAttribute('data-index');
+    if (gameState[index] !== "" || !gameActive) return;
+    
+    makeMove(index, player);
+    if (gameActive) {
+      const lang = localStorage.getItem('lang') || 'es';
+      status.textContent = lang === 'en' ? "Thinking..." : "Pensando...";
+      setTimeout(cpuMove, 500);
+    }
+  }
+  
+  function makeMove(index, symbol) {
+    gameState[index] = symbol;
+    cells[index].classList.add(symbol.toLowerCase());
+    checkResult();
+  }
+  
+  function cpuMove() {
+    if (!gameActive) return;
+    
+    let move = findBestMove(cpu) || findBestMove(player) || randomMove();
+    
+    if (move !== null) {
+      makeMove(move, cpu);
+      if (gameActive) {
+        const lang = localStorage.getItem('lang') || 'es';
+        status.textContent = lang === 'en' ? "Your turn (X)" : "Tu turno (X)";
+      }
+    }
+  }
+  
+  function findBestMove(symbol) {
+    for (let pattern of winPatterns) {
+      const [a, b, c] = pattern;
+      if (gameState[a] === symbol && gameState[b] === symbol && gameState[c] === "") return c;
+      if (gameState[a] === symbol && gameState[c] === symbol && gameState[b] === "") return b;
+      if (gameState[b] === symbol && gameState[c] === symbol && gameState[a] === "") return a;
+    }
+    return null;
+  }
+  
+  function randomMove() {
+    const available = gameState.map((v, i) => v === "" ? i : null).filter(v => v !== null);
+    return available.length > 0 ? available[Math.floor(Math.random() * available.length)] : null;
+  }
+  
+  function checkResult() {
+    let roundWon = false;
+    for (let pattern of winPatterns) {
+      const [a, b, c] = pattern;
+      if (gameState[a] !== "" && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+        roundWon = true;
+        break;
+      }
+    }
+    
+    if (roundWon) {
+      const winner = gameState.includes(player) ? "PLAYER" : "CPU";
+      const lang = localStorage.getItem('lang') || 'es';
+      if (winner === "PLAYER") {
+        status.textContent = lang === 'en' ? "YOU WIN! [SYSTEM BREACHED]" : "¡GANASTE! [SISTEMA VULNERADO]";
+        status.style.color = "#0f0";
+      } else {
+        status.textContent = lang === 'en' ? "CPU WINS. [ACCESS DENIED]" : "GANÓ LA CPU. [ACCESO DENEGADO]";
+        status.style.color = "#f00";
+      }
+      gameActive = false;
+      return;
+    }
+    
+    if (!gameState.includes("")) {
+      const lang = localStorage.getItem('lang') || 'es';
+      status.textContent = lang === 'en' ? "DRAW. [DATA CORRUPTED]" : "EMPATE. [DATOS CORRUPTOS]";
+      gameActive = false;
+    }
+  }
+  
+  function resetGame() {
+    gameState = ["", "", "", "", "", "", "", "", ""];
+    gameActive = true;
+    const lang = localStorage.getItem('lang') || 'es';
+    status.textContent = lang === 'en' ? "Your turn (X)" : "Tu turno (X)";
+    status.style.color = "#0f0";
+    cells.forEach(cell => {
+      cell.classList.remove('x', 'o');
+    });
+  }
+  
+  function cpuStart() {
+    resetGame();
+    const lang = localStorage.getItem('lang') || 'es';
+    status.textContent = lang === 'en' ? "Thinking..." : "Pensando...";
+    setTimeout(cpuMove, 500);
+  }
+  
+  cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+  resetBtn.addEventListener('click', resetGame);
+  cpuStartBtn.addEventListener('click', cpuStart);
+}
+
 // Exponer funciones nuevas
 window.initRofiMenu = initRofiMenu;
 window.initCalendar = initCalendar;
 window.initQuickLaunch = initQuickLaunch;
+window.initTicTacToe = initTicTacToe;

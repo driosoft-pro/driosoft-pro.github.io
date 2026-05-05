@@ -744,3 +744,92 @@ body.light .prompt, body.light .command, body.light .info-label { color: var(--p
   justify-content: flex-start !important;
   font-size: 1rem !important;
 }
+/* Game Styles */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #000;
+  color: #0f0;
+  font-family: var(--font-mono);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 10px;
+  border: 2px solid #0f0;
+  padding: 10px;
+  background: #050505;
+}
+
+.ttt-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 1px solid #050;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ttt-cell:hover {
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.ttt-cell.x::before {
+  content: 'X';
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+}
+
+.ttt-cell.o::before {
+  content: 'O';
+  color: #f0f;
+  text-shadow: 0 0 10px #f0f;
+}
+
+#game-status {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  height: 1.5rem;
+}
+
+.terminal-header {
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+#reset-game {
+  margin-top: 1rem;
+  border: 1px solid #0f0;
+  background: transparent;
+  color: #0f0;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.3s;
+}
+
+#reset-game:hover {
+  background: #0f0;
+  color: #000;
+  box-shadow: 0 0 15px #0f0;
+}
+
+@media (max-width: 480px) {
+  .ttt-board {
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+  }
+  .ttt-cell {
+    font-size: 1.8rem;
+  }
+}

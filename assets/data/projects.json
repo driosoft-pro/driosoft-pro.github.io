@@ -2,7 +2,7 @@
   "categories": [
     {
       "id": "ai",
-      "name": "Inteligencia Artificial y Visión Computacional",
+      "name": "IA, Visión Artificial & Machine Learning",
       "icon": "fas fa-robot",
       "projects": [
         {
@@ -37,7 +37,7 @@
     },
     {
       "id": "tools",
-      "name": "Herramientas y Automatización",
+      "name": "Herramientas de Productividad & Automatización",
       "icon": "fas fa-tools",
       "projects": [
         {
@@ -58,7 +58,7 @@
     },
     {
       "id": "dotfiles",
-      "name": "Configuraciones y Dotfiles",
+      "name": "Arquitectura de Sistemas & Dotfiles",
       "icon": "fas fa-cog",
       "projects": [
         {
@@ -93,7 +93,7 @@
     },
     {
       "id": "apps",
-      "name": "Aplicaciones y Proyectos de Software",
+      "name": "Desarrollo de Software & Microservicios",
       "icon": "fas fa-mobile-alt",
       "projects": [
         {
@@ -152,7 +152,7 @@
     },
     {
       "id": "data",
-      "name": "Análisis de Datos y Estadística",
+      "name": "Data Engineering, Análisis & Estadística",
       "icon": "fas fa-chart-line",
       "projects": [
         {

@@ -15,7 +15,8 @@ async function loadProjects() {
     data.categories.forEach(category => {
       html += `
         <div class="project-category-group">
-          <h3 class="subsection-title" style="margin-top: 2rem;"><i class="${category.icon}"></i> ${category.name}</h3>
+          <h3 class="subsection-title"><i class="${category.icon}"></i> ${category.name}</h3>
+
           <div class="projects-grid">
       `;
 

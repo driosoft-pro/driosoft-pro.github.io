@@ -476,7 +476,12 @@ window.openWindow = async (name) => {
       initTicTacToe();
     }
     
+    if (name === 'main-contact') {
+      initContactForm();
+    }
+    
     initWindowInteractivity();
+    initEmailProtection();
     
     document.querySelectorAll('nav a').forEach(a => {
       a.classList.remove('active');
@@ -614,8 +619,84 @@ function initTicTacToe() {
   cpuStartBtn.addEventListener('click', cpuStart);
 }
 
-// Exponer funciones nuevas
-window.initRofiMenu = initRofiMenu;
-window.initCalendar = initCalendar;
-window.initQuickLaunch = initQuickLaunch;
-window.initTicTacToe = initTicTacToe;
+
+// ============================================
+// EMAIL PROTECTION & CONTACT FORM
+// ============================================
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const originalBtnText = btn.innerHTML;
+    
+    // Feedback visual
+    const lang = localStorage.getItem('lang') || 'es';
+    btn.disabled = true;
+    btn.innerHTML = lang === 'es' ? '<i class="fas fa-spinner fa-spin"></i> Enviando...' : '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    const formData = new FormData(form);
+    
+    try {
+      // Usaremos Formspree. El usuario debe reemplazar 'YOUR_FORM_ID' 
+      // o podemos usar su email directamente si no le importa que sea visible en el fetch
+      const response = await fetch('https://formspree.io/f/mqakppov', { // Placeholder ID o email
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        btn.innerHTML = lang === 'es' ? '<i class="fas fa-check"></i> ¡Enviado!' : '<i class="fas fa-check"></i> Sent!';
+        btn.style.backgroundColor = 'var(--green)';
+        form.reset();
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerHTML = originalBtnText;
+          btn.style.backgroundColor = '';
+        }, 5000);
+      } else {
+        throw new Error('Error al enviar');
+      }
+    } catch (err) {
+      btn.innerHTML = lang === 'es' ? '<i class="fas fa-exclamation-triangle"></i> Error' : '<i class="fas fa-exclamation-triangle"></i> Error';
+      btn.style.backgroundColor = 'var(--red)';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = originalBtnText;
+        btn.style.backgroundColor = '';
+      }, 5000);
+    }
+  });
+}
+
+// Obfuscate Email to prevent scrapers
+function initEmailProtection() {
+  const emailLinks = document.querySelectorAll('.protected-email');
+  emailLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const user = link.getAttribute('data-user');
+      const domain = link.getAttribute('data-domain');
+      if (user && domain) {
+        window.location.href = `mailto:${user}@${domain}`;
+      }
+    });
+    
+    // Optional: Show email on hover for humans
+    link.addEventListener('mouseenter', () => {
+      const user = link.getAttribute('data-user');
+      const domain = link.getAttribute('data-domain');
+      if (user && domain) {
+        link.title = `${user}@${domain}`;
+      }
+    });
+  });
+}
+
+
+// Exponer funciones
+window.initContactForm = initContactForm;
+window.initEmailProtection = initEmailProtection;
